@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+
+<form method="post" action="pizza_options">
+	<div class="delivery_buttons">
+		<label for="dine_in">Dine In</label>
+				<input type="radio" name="delivery_option" id="dining_room" value="dine in">
+		<label for="delivery">Delivery</label>
+				<input type="radio" name="delivery_option" id="no_dining_room" value="delivery">	
+	</div>
+
+	<div class="quantity">
+		<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" required>
+	</div>
+
+	<div class="size_button">
+		<label for="small">Small</label>
+				<input type="radio" name="pizza_size" id="small_pizza" value="small">
+		<label for="medium">Medium</label>
+				<input type="radio" name="pizza_size" id="med_pizza" value="medium">
+		<label for="large">Large</label>
+				<input type="radio" name="pizza_size" id="lg_pizza" value="large">
+	</div>
+
+	<div class="crust_style">
+		<label for="hand tossed">Hand Tossed</label>
+				<input type="radio" name="crust_type" id="hand" value="hand tossed">
+		<label for="pan crust">Pan Crust</label>
+				<input type="radio" name="crust_type" id="pan" value="pan crust">	
+	</div>
+
+	<div class="topping_choices">
+		<label for="pepperoni">Pepperoni</label>
+				<input type="checkbox" name="toppings[]" id="pepp" value="pepperoni">
+		<label for="sausage">Sausage</label>
+				<input type="checkbox" name="toppings[]" id="saus" value="sausage">
+		<label for="ham">Ham</label>
+				<input type="checkbox" name="toppings[]" id="ham" value="ham">
+		<label for="bacon">Bacon</label>
+				<input type="checkbox" name="toppings[]" id="bacon" value="bacon">
+		<label for="pineapple">Pineapple</label>
+				<input type="checkbox" name="toppings[]" id="pine" value="pineapple">
+		<label for="extra_cheese">Extra Cheese</label>
+				<input type="checkbox" name="toppings[]" id="exchez" value="extra cheese">
+		<label for="green_peppers">Green Peppers</label>
+				<input type="checkbox" name="toppings[]" id="gpepp" value="green peppers">
+		<label for="banana_peppers">Banana Peppers</label>
+				<input type="checkbox" name="toppings[]" id="bpepp" value="banana peppers">
+		<label for="mushrooms">Mushrooms</label>
+				<input type="checkbox" name="toppings[]" id="mush" value="mushrooms">
+		<label for="olives">Olives</label>
+				<input type="checkbox" name="toppings[]" id="olive" value="olives">
+		<label for="onions">Onions</label>
+				<input type="checkbox" name="toppings[]" id="onion" value="onions">
+	</div>
+
+	<button class="button">Submit</button>
+
+
+</form>
+
+
+
+
