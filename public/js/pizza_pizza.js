@@ -1,9 +1,10 @@
 function adress_dis() {
     if (document.getElementById("no_dining_room").checked) {
         document.getElementById("adress_bar").style.display = 'block';
-    } else {
+    }else if (document.getElementById("dining_room").checked) {
         document.getElementById("adress_bar").style.display = 'none';
-    }
+    }else 
+        document.getElementById("adress_bar").style.display = 'none';
 }
 
 function valthis() {

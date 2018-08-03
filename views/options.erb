@@ -4,13 +4,13 @@
 <form method="post" action="pizza_options">
 	<div class="delivery_buttons">
 		<label for="dine_in">Dine In</label>
-				<input type="radio" name="delivery_option" id="dining_room" value="dine in" required>
+				<input type="radio" name="delivery_option" id="dining_room" onchange=" adress_dis()" value="dine in" required>
 		<label for="delivery">Delivery</label>
 				<input type="radio" name="delivery_option" id="no_dining_room" onchange="adress_dis()" value="delivery">	
 	</div>
 
 	<div class="quantity">
-		<input type="number" name="how_many" placeholder="Number of Pizzas" maxlength="2" required>
+		<input type="number" name="how_many" placeholder="Number of Pizzas" min="1" maxlength="2" required>
 	</div>
 
 	<div class="size_button">
