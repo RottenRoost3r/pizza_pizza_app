@@ -47,13 +47,13 @@ post '/confirm' do
 	confirm_crust = params[:confirm_crust]
 	confirm_topping = params[:confirm_topping]
 	confirm_delivery = params[:confirm_delivery]
-	p "params in confirm post are #{params}"
 	street = params[:street]
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
+	p "params in confirm are #{params}"
 	confirm_arr = []
-	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery << street << city << state << zip
+	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery 
 	confirm_arr.uniq!
 	confirm_arr.each do |confirmation|
 		if confirm_arr.length == 2
@@ -74,7 +74,12 @@ end
 
 get '/total_page' do
 	p_total = session[:p_total]
-	erb :total, locals:{p_total: p_total}
+	street = params[:street]
+	city = params[:city]
+	state = params[:state]
+	zip = params[:zip]
+	p "params in total are #{params}"
+	erb :total, locals:{p_total: p_total, street: street, city: city, state: state, zip: zip}
 end
 
 post '/total_page' do
