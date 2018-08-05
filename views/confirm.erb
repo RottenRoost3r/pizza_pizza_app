@@ -54,11 +54,10 @@
 	</div>
 	<br>
 
-	<div hidden class="confirm_adress">
-		<% street %>
-		<% city %>
-		<% state %>
-		<% zip %>
-	</div>
+	<input type="hidden" name="street" value="<%=street%>">
+	<input type="hidden" name="city" value="<%=city%>">
+	<input type="hidden" name="state" value="<%=state%>">
+	<input type="hidden" name="zip" value="<%=zip%>">
+
 	<button type="submit">Confirm Order
 </form>
