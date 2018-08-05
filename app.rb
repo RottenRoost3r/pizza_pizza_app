@@ -34,9 +34,10 @@ get '/confirm_order' do
 	p_crust = total.values[2]
 	p_toppings = total.values[3]
 	p_delivery = total.values[4]
+	toppings = eval(p_toppings)
 	session[:p_total] = total.values[5]
 	p "params at confirm are #{params}"
-	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, p_toppings: p_toppings, p_delivery: p_delivery, street: street, city: city, state: state, zip: zip} 
+	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, toppings: toppings, p_delivery: p_delivery, street: street, city: city, state: state, zip: zip} 
 end
 
 post '/confirm_order' do
