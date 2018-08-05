@@ -36,10 +36,41 @@ get '/confirm_order' do
 	p_delivery = total.values[4]
 	toppings = eval(p_toppings)
 	session[:p_total] = total.values[5]
-	p "params at confirm are #{params}"
 	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, toppings: toppings, p_delivery: p_delivery, street: street, city: city, state: state, zip: zip} 
 end
 
-post '/confirm_order' do
+post '/confirm' do
+	confirm_quantity = params[:confirm_quantity]
+	confirm_size = params[:confirm_size]
+	confirm_crust = params[:confirm_crust]
+	confirm_topping = params[:confirm_topping]
+	confirm_delivery = params[:confirm_delivery]
+	confirm_arr = []
+	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery
+	confirm_arr.uniq!
+	confirm_arr.each do |confirmation|
+		if confirm_arr.length == 2
+			redirect '/pizza_options'
+		else confirm_arr.length == 1
+			if confirmation == "no"
+				redirect '/pizza_options'
+			else
+				redirect '/total_page'
+			end
+		end
+	end
+end
 
+get '/pizza_options' do
+	erb :options
+end
+
+get '/total_page' do
+	p_total = session[:p_total]
+	erb :total, locals:{p_total: p_total}
+end
+
+post '/total_page' do
+
+	redirect '/total'
 end
