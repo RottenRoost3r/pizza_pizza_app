@@ -8,6 +8,8 @@ get '/' do
   erb :options
 end
 
+
+
 post '/pizza_options' do
 	delivery_option = params[:delivery_option]
 	pizza_size  = params[:pizza_size]
@@ -18,20 +20,25 @@ post '/pizza_options' do
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
-	p "params in pizza options are #{params}"
-	redirect '/total_page?delivery_option=' + delivery_option + '&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings + '&street' + street + '&city' + city + '&state' + state + '&zip' + zip 
+	redirect '/confirm_order?delivery_option=' + delivery_option + '&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings + '&street' + street + '&city' + city + '&state' + state + '&zip' + zip 
 end
 
-get '/total_page' do
-	p "params in total #{params}"
+get '/confirm_order' do
 	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option], params[:pizza_size])
 	street = params[:street]
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
-	p "total is #{total}"
-		erb :total, locals:{total: total, street: street, city: city, state: state, zip: zip} 
+	p_quantity = total.values[0]
+	p_size = total.values[1]
+	p_crust = total.values[2]
+	p_toppings = total.values[3]
+	p_delivery = total.values[4]
+	session[:p_total] = total.values[5]
+	p "params at confirm are #{params}"
+	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, p_toppings: p_toppings, p_delivery: p_delivery, street: street, city: city, state: state, zip: zip} 
 end
 
+post '/confirm_order' do
 
-#*********************8need to work on getting the string of [pizza_toppings] back into an array to proceed with rest of code
+end
