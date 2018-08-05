@@ -1,3 +1,67 @@
+body{
+    background-image: url(/images/pizza3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+
+.title{
+  font-family: 'Anton', sans-serif;
+  color: black;
+  font-size: 3rem;
+}
+
 .meats{
-    float: left;
+    border-style: double;
+    background-color: brown;
+    width: 385px;
+}
+
+.delivery_buttons{
+    border-style: double;
+    width: 192px;
+    background-color: salmon;
+}
+
+input{
+    border-style: double;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.size_button{
+    border-style: double;
+    background-color: salmon;
+    width: 265px;
+}
+
+.crust_style{
+    border-style: double;
+    background-color: salmon;
+    width: 266px;
+}
+
+
+.veggies{
+    border-style: double;
+    background-color: brown;
+    width: 656px;
+}
+
+.extras{
+    border-style: double;
+    background-color: brown;
+    width: 276px;
+}
+
+button{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border-style: outset;
+    border-color: brown;
+    background-color: red;
+    color: white;
+    font-family: inherit;
+    font-size: 17px;
 }

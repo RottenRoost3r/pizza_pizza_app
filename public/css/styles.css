@@ -30,8 +30,11 @@ table
 .title
 {
   font-family: 'Anton', sans-serif;
-  color: darkkhaki;
+  color: black;
   font-size: 3rem;
+  border-style: hidden;
+  background-color: tomato;
+  width: 200px;
 }
 
 .txtbox

@@ -1,7 +1,7 @@
-<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/confirm.css">
 
 <form method="post" action="confirm">
-		<p>Please confirm your order below:</p>
+		<h5>Please confirm your order below:</h5>
 	<div class="confirm_quantity">
 			<% p_quantity.to_i %>
 			<% if p_quantity.to_i > 1 %>
@@ -15,7 +15,7 @@
 		<label for="no">No</label>
 			<input type="radio" name="confirm_quantity" value="no">
 	</div>
-	<hr>
+	<br>
 	<div class="confirm_size">
 			<%= p_size.capitalize %><br>
 			<label for="yes">Yes</label>
@@ -24,7 +24,7 @@
 				<input type="radio" name="confirm_size" value="no">
 	</div>
 
-	<hr>
+	<br>
 	<div class="confirm_crust">
 			<%= p_crust.capitalize %><br>
 			<label for="yes">Yes</label>
@@ -33,7 +33,16 @@
 				<input type="radio" name="confirm_crust" value="no">
 	</div>
 
-	<hr>
+	<br>
+
+	<div class="confirm_delivery">
+		<%= p_delivery.capitalize %><br>
+		<label for="yes">Yes</label>
+				<input type="radio" name="confirm_delivery" value="yes" required>
+			<label for="no">No</label>
+				<input type="radio" name="confirm_delivery" value="no">
+	</div><br>
+
 	<div class="confirm_topping">
 			<% toppings.each do |top| %>
 				<%= top.capitalize %>
@@ -43,13 +52,7 @@
 			<label for="no">No</label>
 				<input type="radio" name="confirm_topping" value="no">
 	</div>
-	<hr>
-	<div class="confirm_delivery">
-		<%= p_delivery.capitalize %><br>
-		<label for="yes">Yes</label>
-				<input type="radio" name="confirm_delivery" value="yes" required>
-			<label for="no">No</label>
-				<input type="radio" name="confirm_delivery" value="no">
-	</div>
+	<br>
+	
 	<button type="submit">Confirm Order
 </form>

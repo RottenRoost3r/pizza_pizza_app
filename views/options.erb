@@ -2,16 +2,17 @@
 <script src="/js/pizza_pizza.js"></script>
 
 <form method="post" action="pizza_options">
+	
+	<div class="quantity">
+		<input type="number" name="how_many" placeholder="Number of Pizzas" min="1" maxlength="2" required>
+	</div><br>
+	
 	<div class="delivery_buttons">
 		<label for="dine_in">Dine In</label>
 				<input type="radio" name="delivery_option" id="dining_room" onchange=" adress_dis()" value="dine in" required>
 		<label for="delivery">Delivery</label>
 				<input type="radio" name="delivery_option" id="no_dining_room" onchange="adress_dis()" value="delivery">	
-	</div>
-
-	<div class="quantity">
-		<input type="number" name="how_many" placeholder="Number of Pizzas" min="1" maxlength="2" required>
-	</div>
+	</div><br>
 
 	<div class="size_button">
 		<label for="small">Small</label>
@@ -20,14 +21,14 @@
 				<input type="radio" name="pizza_size" id="med_pizza" value="medium">
 		<label for="large">Large</label>
 				<input type="radio" name="pizza_size" id="lg_pizza" value="large">
-	</div>
+	</div><br>
 
 	<div class="crust_style">
 		<label for="hand tossed">Hand Tossed</label>
 				<input type="radio" name="crust_type" id="hand" value="hand tossed" required>
 		<label for="pan crust">Pan Crust</label>
 				<input type="radio" name="crust_type" id="pan" value="pan crust">	
-	</div>
+	</div><br>
 
 	<div class="topping_choices">
 		<div class="meats">
@@ -42,7 +43,7 @@
 			
 				<input type="checkbox" name="toppings[]" id="bacon" value="bacon" class="topping_choices">
 					<label for="bacon">Bacon</label>
-		</div>
+		</div><br>
 		<div class="veggies">
 			
 				<input type="checkbox" name="toppings[]" id="gpepp" value="green peppers" class="topping_choices">
@@ -59,7 +60,7 @@
 			
 				<input type="checkbox" name="toppings[]" id="onion" value="onions" class="topping_choices">
 					<label for="onions">Onions</label>
-		</div>
+		</div><br>
 		<div class="extras">
 			
 				<input type="checkbox" name="toppings[]" id="pine" value="pineapple" class="topping_choices">
@@ -67,7 +68,7 @@
 			
 				<input type="checkbox" name="toppings[]" id="exchez" value="extra cheese" class="topping_choices">
 					<label for="extra_cheese">Extra Cheese</label>
-		</div>
+		</div><br>
 		<div hidden id="adress_bar">
 			<input type="text" name="street" class="street_input" placeholder="Street">
         	<input type="text" name="city" class="city_input" placeholder="City">

@@ -1,0 +1,22 @@
+body{
+    background-image: url(/images/pizza1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+
+title{
+    font-family: 'Anton', sans-serif;
+    color: black;
+    font-size: 3rem;
+    border-style: hidden;
+    background-color: tomato;
+    width: 200px;
+}
+
+form{
+    border-style: outset;
+    border-color: brown;
+    background-color: black;
+    color: white;
+    width: 160px;
+}
