@@ -20,10 +20,12 @@ post '/pizza_options' do
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
-	redirect '/confirm_order?delivery_option=' + delivery_option + '&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings + '&street' + street + '&city' + city + '&state' + state + '&zip' + zip 
+	p"params in options are #{params}"
+	redirect '/confirm_order?delivery_option=' + delivery_option + '&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings + '&street=' + street + '&city=' + city + '&state=' + state + '&zip=' + zip 
 end
 
 get '/confirm_order' do
+	p "params in confirm post are #{params}"
 	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option], params[:pizza_size])
 	street = params[:street]
 	city = params[:city]
@@ -45,8 +47,13 @@ post '/confirm' do
 	confirm_crust = params[:confirm_crust]
 	confirm_topping = params[:confirm_topping]
 	confirm_delivery = params[:confirm_delivery]
+	p "params in confirm post are #{params}"
+	street = params[:street]
+	city = params[:city]
+	state = params[:state]
+	zip = params[:zip]
 	confirm_arr = []
-	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery
+	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery << street << city << state << zip
 	confirm_arr.uniq!
 	confirm_arr.each do |confirmation|
 		if confirm_arr.length == 2

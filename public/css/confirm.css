@@ -55,6 +55,13 @@ button{
     font-size: 22px;
 }
 
+.confirm_adress{
+    border-style: double;
+    width: 313px;
+    background-color: black;
+    color: white;
+}
+
 h5{
     border-style: inset;
     width: 311px;
