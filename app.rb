@@ -62,7 +62,7 @@ post '/confirm' do
 			if confirmation == "no"
 				redirect '/pizza_options'
 			else
-				redirect '/total_page'
+				redirect '/total_page?street=' + street + '&city=' + city + '&state=' + state + '&zip=' + zip 
 			end
 		end
 	end
