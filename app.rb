@@ -31,6 +31,12 @@ get '/confirm_order' do
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
+	session[:delivery] = params[:delivery_option]
+	session[:size] = params[:pizza_size]
+	session[:quantity] = params[:pizza_quantity]
+	session[:crust] = params[:pizza_crust]
+	# session[:topppings] = params[:pizza_toppings]
+	p " WHAAAAAAAAT, WHY?!?! #{session[:quantity]}, #{session[:crust]}, #{session[:topppings]}"
 	p_quantity = total.values[0]
 	p_size = total.values[1]
 	p_crust = total.values[2]
@@ -38,7 +44,8 @@ get '/confirm_order' do
 	p_delivery = total.values[4]
 	toppings = eval(p_toppings)
 	session[:p_total] = total.values[5]
-	erb :confirm, locals:{total: total, p_quantity: p_quantity, p_size: p_size, p_crust: p_crust, toppings: toppings, p_delivery: p_delivery, street: street, city: city, state: state, zip: zip} 
+	session[:topppings] = eval(p_toppings)
+	erb :confirm, locals:{total: total, p_quantity: p_quantity, delivery: session[:delivery], size: session[:size], quantity: session[:quantity], crust: session[:crust], topppings: session[:topppings], p_size: p_size, p_crust: p_crust, toppings: toppings, p_delivery: p_delivery, street: street, city: city, state: state, zip: zip} 
 end
 
 post '/confirm' do
@@ -78,8 +85,14 @@ get '/total_page' do
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
+	delivery = session[:delivery]
+	size = session[:size]
+	quantity = session[:quantity]
+	crust = session[:crust]
+	topppings = session[:topppings]
 	p "params in total are #{params}"
-	erb :total, locals:{p_total: p_total, street: street, city: city, state: state, zip: zip}
+	p " WHAAAAAAAAT, WHY?!?! #{session[:quantity]}, #{session[:crust]}, #{session[:topppings]}"
+	erb :total, locals:{p_total: p_total, delivery: delivery, size: size, quantity: quantity, crust: crust, topppings: topppings, street: street, city: city, state: state, zip: zip}
 end
 
 post '/total_page' do

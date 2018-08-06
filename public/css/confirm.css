@@ -33,7 +33,7 @@ title{
 
 .confirm_topping{
     border-style: double;
-    width: 263px;
+    width: 93vw;
     background-color: brown
 }
 
@@ -68,4 +68,9 @@ h5{
     border-color: brown;
     background-color: black;
     color: white;
+}
+
+
+.confirm_topping img{
+    height: 35px;
 }

@@ -1,7 +1,48 @@
 <link rel="stylesheet" type="text/css" href="/css/total.css">
 
 <form method="post" action="total_page">
+
+
 <%= "Your total is $#{p_total}." %>
 <br>
+
+<%= delivery %><br>
+<%= quantity %><%= " "%><%= size %><%=" pizza(s)"%><br>
+<%= "The pizza will have the following:"%><br>
+<%= crust %><%=" crust"%><br>
+<div class="top">
+<% topppings.each do |top|%>
+<%=top.capitalize%>
+                <% if top == "pepperoni"%>
+				<img src=/images/toppings/pep.png><br>
+				<% elsif top == "sausage"%>
+				<img src=/images/toppings/sausage.png><br>
+				<% elsif top == "ham"%>
+				<img src=/images/toppings/ham.png><br>
+				<% elsif top == "bacon"%>
+				<img src=/images/toppings/bacon.png><br>
+				<% elsif top == "green peppers"%>
+				<img src=/images/toppings/green-peppers.png><br>
+				<% elsif top == "banana peppers"%>
+				<img src=/images/toppings/nanpep.png><br>
+				<% elsif top == "mushrooms"%>
+				<img src=/images/toppings/mush.png>
+				<% elsif top == "olives"%>
+				<img src=/images/toppings/pizza_designer_olives.png><br>
+				<% elsif top == "onions"%>
+				<img src=/images/toppings/onions.png><br>
+				<% elsif top == "pineapple"%>
+				<img src=/images/toppings/pinap.png><br>
+				<% elsif top == "extra cheese"%>
+				<img src=/images/toppings/cheese.png><br>
+                <%end%>
+
+<%end%>
+
+</div>
+
+
+<% if street != ""%>
 <%= "Your pizza will be delivered to #{street}, #{city}, #{state}, #{zip}"%>
+<%end%>
 </form>

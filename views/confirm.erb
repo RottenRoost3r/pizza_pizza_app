@@ -46,7 +46,31 @@
 	<div class="confirm_topping">
 			<% toppings.each do |top| %>
 				<%= top.capitalize %>
-			<%end%><br>
+				<% if top == "pepperoni"%>
+				<img src=/images/toppings/pep.png>
+				<% elsif top == "sausage"%>
+				<img src=/images/toppings/sausage.png>
+				<% elsif top == "ham"%>
+				<img src=/images/toppings/ham.png>
+				<% elsif top == "bacon"%>
+				<img src=/images/toppings/bacon.png>
+				<% elsif top == "green peppers"%>
+				<img src=/images/toppings/green-peppers.png>
+				<% elsif top == "banana peppers"%>
+				<img src=/images/toppings/nanpep.png>
+				<% elsif top == "mushrooms"%>
+				<img src=/images/toppings/mush.png>
+				<% elsif top == "olives"%>
+				<img src=/images/toppings/pizza_designer_olives.png>
+				<% elsif top == "onions"%>
+				<img src=/images/toppings/onions.png>
+				<% elsif top == "pineapple"%>
+				<img src=/images/toppings/pinap.png>
+				<% elsif top == "extra cheese"%>
+				<img src=/images/toppings/cheese.png>
+			<%end%>
+
+		<%end%><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_topping" value="yes" required>
 			<label for="no">No</label>
