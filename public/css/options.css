@@ -13,7 +13,7 @@ body{
 .meats{
     border-style: double;
     background-color: brown;
-    width: 385px;
+    width: 50vw;
 }
 
 .delivery_buttons{
@@ -45,13 +45,13 @@ input{
 .veggies{
     border-style: double;
     background-color: brown;
-    width: 656px;
+    width: 85vw;
 }
 
 .extras{
     border-style: double;
     background-color: brown;
-    width: 276px;
+    width: 50vw;
 }
 
 button{
@@ -64,4 +64,16 @@ button{
     color: white;
     font-family: inherit;
     font-size: 17px;
+}
+
+.meats img{
+    height: 35px;
+}
+
+.veggies img{
+    height: 35px;
+}
+
+.extras img{
+    height: 35px;
 }
