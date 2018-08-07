@@ -39,8 +39,8 @@ title{
 
 .confirm_delivery{
     border-style: double;
-    width: 160px;
     background-color: salmon;
+    width: 266px;
 }
 
 button{
@@ -53,6 +53,12 @@ button{
     color: white;
     font-family: inherit;
     font-size: 22px;
+}
+
+.confirm_sauce{
+    border-style: double;
+    width: 160px;
+    background-color: salmon;
 }
 
 .confirm_adress{

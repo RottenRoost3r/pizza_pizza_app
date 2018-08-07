@@ -41,6 +41,11 @@ input{
     width: 266px;
 }
 
+.sauce_choices{
+    border-style: double;
+    background-color: salmon;
+    width: 266px;
+}
 
 .veggies{
     border-style: double;

@@ -15,6 +15,7 @@
 	</div><br>
 
 	<div class="size_button">
+	<%="Size"%><br>
 		<label for="small">Small</label>
 				<input type="radio" name="pizza_size" id="small_pizza" value="small" required>
 		<label for="medium">Medium</label>
@@ -24,10 +25,19 @@
 	</div><br>
 
 	<div class="crust_style">
+	<%="Crust"%><br>
 		<label for="hand tossed">Hand Tossed</label>
 				<input type="radio" name="crust_type" id="hand" value="hand tossed" required>
-		<label for="pan crust">Pan Crust</label>
-				<input type="radio" name="crust_type" id="pan" value="pan crust">	
+		<label for="pan">Pan</label>
+				<input type="radio" name="crust_type" id="pan" value="pan">	
+	</div><br>
+
+	<div class="sauce_choices">
+	<%="Sauce"%><br>
+		<label for="marinara">Marinara</label>	
+			<input type="radio" name="pizza_sauce" id="marinara_sauce" value="marinara" required>
+		<label for="ranch">Ranch</label>
+			<input type="radio" name="pizza_sauce" id="ranch_sauce" value="ranch">
 	</div><br>
 
 	<div class="topping_choices">

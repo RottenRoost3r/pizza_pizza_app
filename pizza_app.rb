@@ -1,7 +1,7 @@
 def crust_subtotal(pizza_crust)
 	crust_subtotal_arr = []
 	crust = "#{pizza_crust}"
-	if crust == "pan crust" 
+	if crust == "pan" 
 		crust_subtotal_arr << 0.50
 	else 
 		crust_subtotal_arr << 1.00
@@ -18,6 +18,17 @@ def toppings(pizza_toppings)
 		empty << toppings_subtotal
 	end
 	empty
+end
+
+def sauce(pizza_sauce)
+	sauce_array = []
+	if pizza_sauce == "marinara"
+		sauce_array << 1.00
+	elsif pizza_sauce == "ranch"
+		sauce_array << 2.00
+	end
+	puts sauce_array
+	sauce_array
 end
 
 def size(pizza_size)
@@ -50,7 +61,7 @@ def delivery(delivery_option)
 	delivery_arr << charge
 end
 
-def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option, pizza_size)
+def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option, pizza_size, pizza_sauce)
 	final_hash = {}
 	total_arr = []
 	taxes = 0.06
@@ -66,6 +77,7 @@ def final_total(pizza_toppings, pizza_crust, pizza_quantity, delivery_option, pi
 	final_hash["pizza_crust"] = pizza_crust
 	final_hash["pizza_toppings"] = pizza_toppings
 	final_hash["delivery_option"] = delivery_option
+	final_hash["pizza_sauce"] = pizza_sauce
 	final_hash["total"] = total
 	final_hash
 end

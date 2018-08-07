@@ -4,12 +4,18 @@
 
 
 <%= "Your total is $#{p_total}." %>
-<br>
+<hr>
 
-<%= delivery %><br>
-<%= quantity %><%= " "%><%= size %><%=" pizza(s)"%><br>
-<%= "The pizza will have the following:"%><br>
-<%= crust %><%=" crust"%><br>
+<%=" #{delivery.capitalize}" %><br>
+	<% quantity.to_i %>
+			<% if quantity.to_i > 1 %>
+			<%= "#{quantity} #{size.capitalize}  Pizzas" %>
+			<% else %>
+				<%= "#{quantity}  #{size.capitalize} Pizza" %>
+			<% end %><hr>
+<%= "The pizza will have the following:"%><hr>
+<%= crust.capitalize %><%=" crust"%><br>
+<%= sauces.capitalize%><%= " sauce"%><br>
 <div class="top">
 <% topppings.each do |top|%>
 <%=top.capitalize%>
@@ -26,7 +32,7 @@
 				<% elsif top == "banana peppers"%>
 				<img src=/images/toppings/nanpep.png><br>
 				<% elsif top == "mushrooms"%>
-				<img src=/images/toppings/mush.png>
+				<img src=/images/toppings/mush.png><br>
 				<% elsif top == "olives"%>
 				<img src=/images/toppings/pizza_designer_olives.png><br>
 				<% elsif top == "onions"%>
@@ -41,7 +47,7 @@
 
 </div>
 
-
+<hr>
 <% if street != ""%>
 <%= "Your pizza will be delivered to #{street}, #{city}, #{state}, #{zip}"%>
 <%end%>

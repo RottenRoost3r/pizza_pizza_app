@@ -26,7 +26,8 @@
 
 	<br>
 	<div class="confirm_crust">
-			<%= p_crust.capitalize %><br>
+		
+			<%= p_crust.capitalize %><%=" crust"%><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_crust" value="yes" required>
 			<label for="no">No</label>
@@ -35,6 +36,15 @@
 
 	<br>
 
+
+	<div class="confirm_sauce">
+		<%=sauces.capitalize%><%= " Sauce"%><br>
+		<label for="yes">Yes</label>
+		<input type="radio" name="confirm_sauce" value="yes" required>
+			<label for="no">No</label>
+				<input type="radio" name="confirm_sauce" value="no">
+	</div><br>
+
 	<div class="confirm_delivery">
 		<%= p_delivery.capitalize %><br>
 		<label for="yes">Yes</label>
@@ -42,8 +52,10 @@
 			<label for="no">No</label>
 				<input type="radio" name="confirm_delivery" value="no">
 	</div><br>
+			
 
 	<div class="confirm_topping">
+			<%= "Toppings:"%><br>
 			<% toppings.each do |top| %>
 				<%= top.capitalize %>
 				<% if top == "pepperoni"%>
