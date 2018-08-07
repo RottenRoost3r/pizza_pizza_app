@@ -1,9 +1,16 @@
 <link rel="stylesheet" type="text/css" href="/css/total.css">
 
 <form method="post" action="total_page">
+<%= "Your total is $" %>
+<% if p_total.to_s[-2] == "." %>
+			<% pp_total = p_total.to_s.insert(-1, "0") %>
+			<%= pp_total %>
+	<% else %>
+			<% pp_total = p_total %>
+			<%= pp_total %>
+	<% end %>
 
 
-<%= "Your total is $#{p_total}." %>
 <hr>
 
 <%=" #{delivery.capitalize}" %><br>
@@ -14,8 +21,22 @@
 				<%= "#{quantity}  #{size.capitalize} Pizza" %>
 			<% end %><hr>
 <%= "The pizza will have the following:"%><hr>
-<%= crust.capitalize %><%=" crust"%><br>
-<%= sauces.capitalize%><%= " sauce"%><br>
+<div class="crust">
+	<%= crust.capitalize %><%=" crust"%>
+				<%if crust == "pan"%>
+				<img src=/images/crustsauce/pan.png>
+				<%elsif crust == "hand tossed"%>
+				<img src=/images/crustsauce/hand_tossed.png>
+				<%end%><br>
+</div>
+<div class="sauces">
+	<%= sauces.capitalize%><%= " sauce"%>
+				<%if sauces == "marinara"%>
+				<img src=/images/crustsauce/marinara.png>
+				<%elsif sauces == "ranch"%>
+				<img src=/images/crustsauce/ranch.png>
+				<%end%><br>
+</div>
 <div class="top">
 <% topppings.each do |top|%>
 <%=top.capitalize%>

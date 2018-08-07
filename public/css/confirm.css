@@ -27,7 +27,7 @@ title{
 
 .confirm_crust{
     border-style: double;
-    width: 160px;
+    width: 175px;
     background-color: salmon;
 }
 
@@ -59,6 +59,14 @@ button{
     border-style: double;
     width: 160px;
     background-color: salmon;
+}
+
+.confirm_crust img{
+    height: 35px;
+}
+
+.confirm_sauce img{
+    height:35px
 }
 
 .confirm_adress{

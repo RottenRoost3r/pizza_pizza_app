@@ -38,13 +38,13 @@ input{
 .crust_style{
     border-style: double;
     background-color: salmon;
-    width: 266px;
+    width: 300px;
 }
 
 .sauce_choices{
     border-style: double;
     background-color: salmon;
-    width: 266px;
+    width: 285px;
 }
 
 .veggies{
@@ -80,5 +80,13 @@ button{
 }
 
 .extras img{
+    height: 35px;
+}
+
+.crust_style img{
+    height: 35px;
+}
+
+.sauce_choices img{
     height: 35px;
 }

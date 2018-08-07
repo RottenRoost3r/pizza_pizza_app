@@ -27,9 +27,16 @@
 	<br>
 	<div class="confirm_crust">
 		
-			<%= p_crust.capitalize %><%=" crust"%><br>
+			<%= p_crust.capitalize %><%=" crust"%>
+			<%if p_crust == "pan"%>
+				<img src=/images/crustsauce/pan.png>
+				<%elsif p_crust == "hand tossed"%>
+				<img src=/images/crustsauce/hand_tossed.png>
+				<%end%><br>
+		
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_crust" value="yes" required>
+		
 			<label for="no">No</label>
 				<input type="radio" name="confirm_crust" value="no">
 	</div>
@@ -39,6 +46,11 @@
 
 	<div class="confirm_sauce">
 		<%=sauces.capitalize%><%= " Sauce"%><br>
+		<%if sauces == "marinara"%>
+				<img src=/images/crustsauce/marinara.png>
+				<%elsif sauces == "ranch"%>
+				<img src=/images/crustsauce/ranch.png>
+				<%end%><br>
 		<label for="yes">Yes</label>
 		<input type="radio" name="confirm_sauce" value="yes" required>
 			<label for="no">No</label>
