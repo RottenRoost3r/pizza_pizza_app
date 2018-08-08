@@ -34,7 +34,18 @@ table
   font-size: 3rem;
   border-style: hidden;
   background-color: tomato;
-  width: 200px;
+  width: 100%;
+}
+
+h5{
+    font-size: 13px;
+    font-style: italic;
+    font-family: monospace;
+    border-style: inset;
+    width: 311px;
+    border-color: brown;
+    background-color: black;
+    color: white;
 }
 
 .txtbox
