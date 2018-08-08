@@ -11,7 +11,7 @@ end
 
 def toppings(pizza_toppings)
 	empty = []
-	toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pineapple" => 1.00, "extra cheese" => 1.00, "green peppers" => 0.25, "banana peppers" => 0.25, "mushrooms" => 0.25, "olives" => 0.25, "onions" => 0.25 }
+	toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pineapple" => 1.00, "extra cheese" => 1.00, "green peppers" => 0.25, "banana peppers" => 0.25, "mushrooms" => 0.25, "olives" => 0.25, "onions" => 0.25, "chives" => 0.25 }
 	toppings_subtotal = 0
 	eval(pizza_toppings).each  do |topping|
 		toppings_subtotal = toppings_price.values_at(topping)

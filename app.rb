@@ -21,12 +21,10 @@ post '/pizza_options' do
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
-	p"params in options are #{params}"
 	redirect '/confirm_order?delivery_option=' + delivery_option + '&pizza_sauce=' + pizza_sauce + '&pizza_size=' + pizza_size + '&pizza_quantity=' + pizza_quantity + '&pizza_crust=' + pizza_crust + '&pizza_toppings=' + pizza_toppings + '&street=' + street + '&city=' + city + '&state=' + state + '&zip=' + zip 
 end
 
 get '/confirm_order' do
-	p "params in confirm post are #{params}"
 	total = final_total(params[:pizza_toppings], params[:pizza_crust], params[:pizza_quantity], params[:delivery_option], params[:pizza_size], params[:pizza_sauce])
 	street = params[:street]
 	city = params[:city]
@@ -37,7 +35,6 @@ get '/confirm_order' do
 	session[:quantity] = params[:pizza_quantity]
 	session[:crust] = params[:pizza_crust]
 	session[:sauces] = params[:pizza_sauce]
-	p " WHAAAAAAAAT, WHY?!?! #{session[:quantity]}, #{session[:crust]}, #{session[:topppings]}"
 	p_quantity = total.values[0]
 	p_size = total.values[1]
 	p_crust = total.values[2]
@@ -61,7 +58,6 @@ post '/confirm' do
 	city = params[:city]
 	state = params[:state]
 	zip = params[:zip]
-	p "params in confirm are #{params}"
 	confirm_arr = []
 	confirm_arr << confirm_quantity << confirm_size << confirm_crust << confirm_topping << confirm_delivery << confirm_sauce
 	confirm_arr.uniq!
@@ -94,8 +90,6 @@ get '/total_page' do
 	crust = session[:crust]
 	topppings = session[:topppings]
 	sauces = session[:sauces]
-	p "params in total are #{params}"
-	p " WHAAAAAAAAT, WHY?!?! #{session[:quantity]}, #{session[:crust]}, #{session[:topppings]}"
 	erb :total, locals:{p_total: p_total, delivery: delivery, size: size, quantity: quantity, sauces: sauces, crust: crust, topppings: topppings, street: street, city: city, state: state, zip: zip}
 end
 
